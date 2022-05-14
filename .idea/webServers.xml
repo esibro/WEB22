@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="WebServers">
+    <option name="servers">
+      <webServer id="16bf045e-2eca-46b3-85b3-f954632778af" name="HETZNER" url="http://gostudent.s1910456012.student.kwmhgb.at/">
+        <fileTransfer rootFolder="/usr/home/sstud584/public_html/gostudent/bookstoreServer" accessType="SFTP" host="s1910456012.student.kwmhgb.at" port="222" sshConfigId="daeb156a-b576-4885-aafc-bb68fc154286" sshConfig="sstud584@s1910456012.student.kwmhgb.at:222 password">
+          <advancedOptions>
+            <advancedOptions dataProtectionLevel="Private" passiveMode="true" shareSSLContext="true" />
+          </advancedOptions>
+        </fileTransfer>
+      </webServer>
+    </option>
+  </component>
+</project>
