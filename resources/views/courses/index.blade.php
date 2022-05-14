@@ -8,7 +8,7 @@
 
 <ul>
     @foreach ($courses as $course)
-        <li>{{$course->subject}}</li>
+        <li><a href="courses/{{$course->id}}"> {{$course->subject}}</a> </li>
     @endforeach
 </ul>
 </body>

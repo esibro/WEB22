@@ -7,9 +7,9 @@
 <h1>Go Student</h1>
 
 <ul>
-    @foreach ($courses as $course)
-        <li>{{$course->subject}}</li>
-    @endforeach
+    <h1>{{$course->subject}}</h1>
+    <p>{{$course->level}}</p>
+    <p>{{$course->description}}</p>
 </ul>
 </body>
 </html>
