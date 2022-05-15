@@ -2,7 +2,10 @@
 
 namespace Database\Seeders;
 
+use App\Models\Course;
+use App\Models\User;
 use Illuminate\Database\Seeder;
+use Illuminate\Support\Facades\App;
 use Illuminate\Support\Facades\DB;
 use mysql_xdevapi\Table;
 
@@ -15,10 +18,23 @@ class CoursesTableSeeder extends Seeder
      */
     public function run()
     {
-        DB::table('courses')->insert([
-            'subject' => 'Geographie',
-            'level' => 'Grundstufe',
-            'description' => 'Lorem Ipsum Geographie'
-    ]);
+        $course = new Course();
+        $course->subject = "Deutsch";
+        $course->level = "Mittelstufe";
+        $course->description = "Für alle Loser";
+
+        $course->save();
+        $date1 = new \App\Models\Date;
+        $date1->date = '2022-05-20 18:00:00';
+
+        $date2 = new \App\Models\Date;
+        $date2->date = '2022-05-22 17:30:00';
+        $course->dates()->saveMany([$date1,$date2]);
+
+        $users= User::all()->pluck('id');
+        $course->users()->sync($users);
+
+        $course->save();
+
     }
 }

@@ -19,6 +19,9 @@ class CreateCoursesTable extends Migration
             $table->string('level');
             $table->text('description')->nullable();
             $table->string('status')->default('available');
+
+            // fk user constraint
+            //$table->foreignId('user_id')->constrained()->onDelete('cascade');
             $table->timestamps();
         });
     }
