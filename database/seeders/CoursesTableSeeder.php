@@ -24,12 +24,12 @@ class CoursesTableSeeder extends Seeder
         $course->description = "Für alle Loser";
 
         $course->save();
-        $date1 = new \App\Models\Date;
+        $date1 = new \App\Models\Timeslots;
         $date1->date = '2022-05-20 18:00:00';
 
-        $date2 = new \App\Models\Date;
+        $date2 = new \App\Models\Timeslots;
         $date2->date = '2022-05-22 17:30:00';
-        $course->dates()->saveMany([$date1,$date2]);
+        $course->timeslots()->saveMany([$date1,$date2]);
 
         $users= User::all()->pluck('id');
         $course->users()->sync($users);

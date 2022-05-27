@@ -21,4 +21,9 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 });
 
 Route::get('courses', [CourseController::class, 'index']);
+Route::post('courses', [CourseController::class, 'save']);
+Route::put('courses/{subject}', [CourseController::class, 'update']);
+Route::delete('courses/{subject}', [CourseController::class, 'delete']);
 Route::get('courses/{subject}', [CourseController::class, 'findBySubject']);
+Route::get('courses/checksubject/{subject}', [CourseController::class, 'checkSubject']);
+Route::get('courses/search/{description}', [CourseController::class, 'findByDescription']);

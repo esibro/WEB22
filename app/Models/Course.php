@@ -26,8 +26,8 @@ class Course extends Model
         return $query->where('status', '=', 'booked');
     }
 
-    public function dates() : HasMany{
-        return $this->hasMany(Date::class);
+    public function timeslots() : HasMany{
+        return $this->hasMany(Timeslots::class);
     }
 
     public function users():BelongsToMany{
