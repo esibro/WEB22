@@ -15,7 +15,7 @@ class CreateCoursesTable extends Migration
     {
         Schema::create('courses', function (Blueprint $table) {
             $table->id(); //primarykey
-            $table->string('subject');
+            $table->string('subject')->unique();
             $table->string('level');
             $table->text('description')->nullable();
             $table->string('status')->default('available');
