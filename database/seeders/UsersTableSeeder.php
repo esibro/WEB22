@@ -20,7 +20,7 @@ class UsersTableSeeder extends Seeder
         $user->email = 'esmaguersoy@gmail.com';
         $user->password = bcrypt('password123');
         $user->description = 'Professionelle Lerntrainerin';
-        $user->role = 'teacher';
+        $user->isTeacher = true;
         $user->save();
 
         $user1 = new User();
@@ -29,7 +29,7 @@ class UsersTableSeeder extends Seeder
         $user1->email = 'hanneloresiedl@gmail.com';
         $user1->password = bcrypt('password1234');
         $user1->description = 'Lehramt Studentin Mathematik';
-        $user1->role = 'teacher';
+        $user1->isTeacher = true;
         $user1->save();
     }
 }
