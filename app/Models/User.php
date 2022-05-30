@@ -52,7 +52,9 @@ class User extends Authenticatable implements JWTSubject
     }
 
     public function getJWTCustomClaims()
+
     {
-        return ['user' => ['id' => $this->id]];
+        //custom claims for differentiating between teacher and student
+        return ['user' => ['id' => $this->id, 'isTeacher' => $this->isTeacher]];
     }
 }
