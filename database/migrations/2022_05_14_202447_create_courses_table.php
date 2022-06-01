@@ -18,7 +18,9 @@ class CreateCoursesTable extends Migration
             $table->string('subject')->unique();
             $table->string('level');
             $table->text('description')->nullable();
-            $table->string('status')->default('available');
+            $table->string('state');
+            $table->bigInteger('user_id')->nullable();
+            $table->bigInteger('student_id')->nullable();
 
             // fk user constraint
             //$table->foreignId('user_id')->constrained()->onDelete('cascade');
@@ -33,6 +35,7 @@ class CreateCoursesTable extends Migration
      */
     public function down()
     {
+
         Schema::dropIfExists('courses');
-    }
+           }
 }

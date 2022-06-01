@@ -22,6 +22,8 @@ class CoursesTableSeeder extends Seeder
         $course->subject = "Deutsch";
         $course->level = "Mittelstufe";
         $course->description = "Für alle Loser";
+        $course->state= "available";
+        $course->user_id = "1";
 
         $course->save();
         $date1 = new \App\Models\Timeslots;

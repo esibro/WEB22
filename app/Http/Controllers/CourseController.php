@@ -18,10 +18,17 @@ class CourseController extends Controller
         return response()->json($courses, 200);
     }
 
-    public function findBySubject(string $subject):Course {
+    public function findBySubject(string $subject){
         $course = Course::where('subject', $subject)
             ->with(['users', 'timeslots'])
             ->first();
+        return $course;
+    }
+
+    public function findByUserId(string $user_id){
+        $course = Course::where('user_id', $user_id)
+            ->with(['users', 'timeslots'])
+            ->where('user_id', '=' , $user_id)->get();
         return $course;
     }
 
@@ -63,7 +70,7 @@ class CourseController extends Controller
                         'email' => $usr['email'],
                         'description' => $usr['description'],
                         'password' => $usr['password'],
-                        'role' => $usr['role'],
+                        'isTeacher' => $usr['isTeacher'],
                     ]);
 
                     $course->users()->save($user);

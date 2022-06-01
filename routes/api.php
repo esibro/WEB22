@@ -26,9 +26,10 @@ Route::group(['middleware' => ['api', 'auth.jwt']], function (){
     Route::put('courses/{subject}', [CourseController::class, 'update']);
     Route::delete('courses/{subject}', [CourseController::class, 'delete']);
     Route::post('auth/logout',[AuthController::class,'logout']);
-
+    Route::get('mycourses/{user_id}', [CourseController::class, 'findByUserId']);
 
 });
+
 
 Route::post('auth/login',[AuthController::class,'login']);
 

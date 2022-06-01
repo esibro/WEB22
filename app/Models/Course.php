@@ -12,19 +12,7 @@ class Course extends Model
 {
     use HasFactory;
 
-    protected $fillable = ['subject', 'description', 'level', 'user_id'];
-
-    public function scopeAvailable($query){
-        return $query->where('status', '=', 'available');
-    }
-
-    public function scopeRequested($query){
-        return $query->where('status', '=', 'requested');
-    }
-
-    public function scopeBooked($query){
-        return $query->where('status', '=', 'booked');
-    }
+    protected $fillable = ['subject', 'description', 'level', 'user_id', 'student_id', 'state'];
 
     public function timeslots() : HasMany{
         return $this->hasMany(Timeslots::class);

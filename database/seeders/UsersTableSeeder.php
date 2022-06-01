@@ -31,5 +31,14 @@ class UsersTableSeeder extends Seeder
         $user1->description = 'Lehramt Studentin Mathematik';
         $user1->isTeacher = true;
         $user1->save();
+
+        $user2 = new User();
+        $user2->firstname = 'Hana';
+        $user2->lastname = 'Larason';
+        $user2->email = 'hanalarason@gmail.com';
+        $user2->password = bcrypt('hana123');
+        $user2->description = 'Ich hasse Mathe';
+        $user2->isTeacher = false;
+        $user2->save();
     }
 }
